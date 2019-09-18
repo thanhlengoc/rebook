@@ -388,7 +388,11 @@ class Home extends Component {
     let inputProject;
 
     const inputStyle = {
-      textIdent:'32px', color:'#aaa', fontSize:'16px'
+      textIdent:'32px',
+      fontSize:'16px',
+      marginBottom: '5px',
+      border: '1px solid #32CD32',
+      borderRadius: '30px'
     };
 
     if (renderInputContact) {
@@ -397,15 +401,15 @@ class Home extends Component {
             <hr/>
             <h6>Người liên hệ</h6>
             <Input name="contactName" type="text"
-                   style={{marginBottom: '5px', border: '1px solid #8259ef'}}
+                   style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập tên người liên hệ..."/>
             <Input name="contactPhone" type="text"
-                   style={{marginBottom: '5px', border: '1px solid #8259ef'}}
+                   style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập số điện thoại người liên hệ..."/>
             <Input name="contactAddress" type="text"
-                   style={{marginBottom: '5px', border: '1px solid #8259ef'}}
+                   style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập địa chỉ người liên hệ..."/>
           </div>
@@ -419,15 +423,15 @@ class Home extends Component {
             <hr/>
             <h6>Dự án</h6>
             <Input name="projectName" type="text"
-                   style={{marginBottom: '5px', border: '1px solid #32CD32'}}
+                   style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập tên dự án..."/>
             <Input name="projectOwner" type="text"
-                   style={{marginBottom: '5px', border: '1px solid #32CD32'}}
+                   style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập chủ dự án..."/>
             <Input name="projectSize" type="text"
-                   style={{marginBottom: '5px', border: '1px solid #32CD32'}}
+                   style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập quy mô dự án..."/>
           </div>
@@ -441,7 +445,7 @@ class Home extends Component {
             <hr/>
             <h6>Địa chỉ</h6>
             <Input name="address" type="text"
-                   style={{marginBottom: '5px', border: '1px solid #2d84eb'}}
+                   style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập địa chỉ..."/>
           </div>
@@ -454,7 +458,7 @@ class Home extends Component {
           <div>
             <hr/>
             <h6>Nội thất</h6>
-            <Input name="furniture" type="text" style={{marginBottom: '5px'}}
+            <Input name="furniture" type="text" style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập nội dung nội thất..."/>
           </div>
@@ -467,7 +471,7 @@ class Home extends Component {
           <div>
             <hr/>
             <h6>Số tầng</h6>
-            <Input name="floors" type="text" style={{marginBottom: '5px'}}
+            <Input name="floors" type="text" style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập số tầng nhà..."/>
           </div>
@@ -480,7 +484,7 @@ class Home extends Component {
           <div>
             <hr/>
             <h6>Số phòng</h6>
-            <Input name="rooms" type="text" style={{marginBottom: '5px'}}
+            <Input name="rooms" type="text" style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập số phòng ngủ..."/>
           </div>
@@ -493,7 +497,7 @@ class Home extends Component {
           <div>
             <hr/>
             <h6>Số toilet</h6>
-            <Input name="toilets" type="text" style={{marginBottom: '5px'}}
+            <Input name="toilets" type="text" style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập số toilet..."/>
           </div>
@@ -508,7 +512,7 @@ class Home extends Component {
             <hr/>
             <h6>Hướng nhà</h6>
             <Input name="direct" type="text"
-                   style={{marginBottom: '5px', border: '1px solid #FFFF00'}}
+                   style={inputStyle}
                    onChange={this.handleChangeInput}
                    placeholder="Vui lòng nhập hướng nhà..."/>
           </div>
