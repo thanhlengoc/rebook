@@ -7,11 +7,12 @@ import {
   CardImg,
   CardText,
   CardTitle,
-  Input, CardHeader
+  Input, CardHeader, ListGroup, ListGroupItem
 } from "reactstrap";
 import ButtonGroup from "reactstrap/es/ButtonGroup";
 import '../Home/_home.css';
 import {SocialIcon} from "react-social-icons";
+import Aside from "../Aside/Aside";
 
 class Profile extends Component {
   constructor(props) {
@@ -151,12 +152,25 @@ class Profile extends Component {
       height: '350px',
     };
 
+    const styleListGroup= {
+      marginBottom: '20px'
+    };
+
+    const styleItem = {
+      backgroundColor: '#e9ebee',
+      color: '#111c26',
+      // border: 'none',
+      // outline: 'none',
+      fontSize: '15px',
+      fontWeight: '500'
+    };
+
     return (
       <div className="profile-container">
         <div className="container-fluid" style={{paddingLeft:"40px"}}>
           <div className="row">
             <div className="col col-md-2">
-              <div className="sticky-top profile-info">
+              <div className="sticky-top profile-info" style={{marginBottom:'20px'}}>
                 <div className="profile-avatar">
                   {
                     this.props.currentUser ? (
@@ -175,8 +189,41 @@ class Profile extends Component {
                   <p className="profile-email">{this.props.currentUser.email}</p>
                 </div>
               </div>
+              <ListGroup flush style={styleListGroup}>
+                <ListGroupItem style={styleItem} tag="a" href="#">
+                  <img
+                      src={'/icon/default.jpg'}
+                      className="rounded-circle icon-profile"
+                      alt="Username"/> Username
+                </ListGroupItem>
+                <ListGroupItem style={styleItem} tag="a" href="#">
+                  <img src="/icon/icons8-news.png"/> Bảng tin
+                  <img src="/icon/menu-5.svg" style={{float:'right'}}/>
+                </ListGroupItem>
+                <ListGroupItem style={styleItem} tag="a" href="#">
+                  <img src="/icon/icons8-message_group.png"/> Messenger
+                  <img src="/icon/menu-5.svg" style={{float:'right'}}/>
+                </ListGroupItem>
+                <ListGroupItem style={styleItem} tag="a" href="#">
+                  <img src="/icon/icons8-retro_tv.png"/> Watch
+                  <img src="/icon/menu-5.svg" style={{float:'right'}}/>
+                </ListGroupItem>
+                <ListGroupItem style={styleItem} tag="a" href="#">
+                  <img src="/icon/icons8-group.png"/> Nhóm
+                  <img src="/icon/menu-5.svg" style={{float:'right'}}/>
+                </ListGroupItem>
+                <ListGroupItem style={styleItem} tag="a" href="#">
+                  <img src="/icon/icons8-add_user_male.png"/> Tạo
+                  <img src="/icon/menu-5.svg" style={{float:'right'}}/>
+                </ListGroupItem>
+              </ListGroup>
+              <Card>
+                <CardImg top width="100%"
+                         src="https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png"
+                         alt="Card image cap"/>
+              </Card>
             </div>
-            <div className="col col-md-8">
+            <div className="col col-md-8" style={{paddingRight:'30px'}}>
               <div className="row">
                 <div className="col">
                   <Card style={{border:'none'}}>
@@ -522,39 +569,42 @@ class Profile extends Component {
                   </Card>
                 </div>
                 <div className="col col-md-5">
-                  <Card className="sticky-top" style={{zIndex:'1',top:'60px'}}>
-                    <CardBody>
-                      <strong style={{color:'#4b4f56'}}>Bất động sản được gợi ý</strong>
-                    </CardBody>
-                    <CardImg top width="100%"
-                             src="https://www.ngoisaoso.vn/uploads/news/2014/02/19/thiet-ke-web-bat-dong-san-2.jpg"
-                             alt="Card image cap"/>
-                    <CardBody>
-                      <CardText>With supporting text below as a natural lead-in to
-                        additional content.</CardText>
-                      <Button className="btn-detail">Chi tiết</Button>
-                    </CardBody>
-                  </Card>
-                  <Card style={{display:'flex',flexDirection:'row',padding:'10px'}}>
-                    <CardText style={{marginRight:'20px'}}>Tiếng Việt.</CardText>
-                    <CardText style={{marginRight:'20px'}}>English.</CardText>
-                  </Card>
-                  <div style={{display: 'flex'}}>
-                    <a href="https://mdbootstrap.com/education/bootstrap/" style={{color: '#616770', marginRight: '10px'}}>Điều khoản.</a>
-                    <a href="https://mdbootstrap.com/education/bootstrap/" style={{color: '#616770'}}>Quảng cáo.</a>
+                  <div className="sticky-top" style={{zIndex:'1',top:'60px'}}>
+                    <Card>
+                      <CardBody>
+                        <strong style={{color:'#4b4f56'}}>Bất động sản được gợi ý</strong>
+                      </CardBody>
+                      <CardImg top width="100%"
+                               src="https://www.ngoisaoso.vn/uploads/news/2014/02/19/thiet-ke-web-bat-dong-san-2.jpg"
+                               alt="Card image cap"/>
+                      <CardBody>
+                        <CardText>With supporting text below as a natural lead-in to
+                          additional content.</CardText>
+                        <Button className="btn-detail">Chi tiết</Button>
+                      </CardBody>
+                    </Card>
+                    <Card style={{display:'flex',flexDirection:'row',padding:'10px'}}>
+                      <CardText style={{marginRight:'20px'}}>Tiếng Việt.</CardText>
+                      <CardText style={{marginRight:'20px'}}>English.</CardText>
+                    </Card>
+                    <div style={{display: 'flex'}}>
+                      <a href="https://mdbootstrap.com/education/bootstrap/" style={{color: '#616770', marginRight: '10px'}}>Điều khoản.</a>
+                      <a href="https://mdbootstrap.com/education/bootstrap/" style={{color: '#616770'}}>Quảng cáo.</a>
+                    </div>
+                    <span style={{color: '#616770'}}>© 2019 Copyright: Rebook.com.vn</span>
+                    <div style={{margin:'20px 0'}}>
+                      <SocialIcon url="http://linkedin.com/in/jaketrent" style={{marginRight:'5px'}}/>
+                      <SocialIcon network="twitter" bgColor="#ff5a01" style={{marginRight:'5px'}}/>
+                      <SocialIcon network="facebook" style={{marginRight:'5px'}}/>
+                      <SocialIcon network="google" style={{marginRight:'5px'}}/>
+                    </div>
                   </div>
-                  <span style={{color: '#616770'}}>© 2019 Copyright: Rebook.com.vn</span>
                 </div>
               </div>
             </div>
-            <div className="col col-md-2">
-              <div className="sticky-top" style={{top:"300px",zIndex:'100',width:'50px',float:'right'}}>
-                <SocialIcon url="http://linkedin.com/in/jaketrent" />
-                <SocialIcon network="twitter" bgColor="#ff5a01" />
-                <SocialIcon network="facebook"/>
-                <SocialIcon network="google"/>
 
-              </div>
+            <div className="col col-md-2">
+              <Aside/>
             </div>
           </div>
 

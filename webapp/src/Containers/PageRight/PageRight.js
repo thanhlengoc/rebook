@@ -14,6 +14,7 @@ import Alert from "react-s-alert";
 import {searchNewsByAddress, searchNewsByUser} from "../../api/UserApi";
 import LaddaButton, {EXPAND_LEFT} from "react-ladda";
 import 'ladda/dist/ladda-themeless.min.css';
+import {SocialIcon} from "react-social-icons";
 
 class PageRight extends Component{
   constructor(props) {
@@ -100,12 +101,13 @@ class PageRight extends Component{
                 <img src="/icon/zoom.svg"/> Tìm kiếm chọn lọc
               </strong>
             </CardHeader>
-            <Collapse isOpen={this.state.collapseSearch}>
+
               <div style={{padding:'15px'}}>
                 <div className="search-box" style={{marginBottom:"5px"}}>
                   <span className="fa fa-search"></span>
                   <input id="inputSearch"
                          placeholder="Nội dung tìm kiếm"
+                         onClick={this.toggleCollapse}
                          style={{textIdent:'32px',backgroundColor: '#f2f3f5',outline:'none'}}
                          value={this.state.inputSearch}
                          onChange={(e) => this.setState(
@@ -113,6 +115,7 @@ class PageRight extends Component{
                   />
                 </div>
                 <hr/>
+                <Collapse isOpen={this.state.collapseSearch}>
                 <Row>
                   <Col md={6} style={{paddingRight:'5px'}}>
                     <select className="form-control"
@@ -148,8 +151,8 @@ class PageRight extends Component{
                     <i className="fas fa-search"></i> Search
                   </LaddaButton>
                 </Row>
+                </Collapse>
               </div>
-            </Collapse>
           </Card>
           <Card>
             <CardBody>
@@ -173,6 +176,12 @@ class PageRight extends Component{
             <a href="https://mdbootstrap.com/education/bootstrap/" style={{color: '#616770'}}>Quảng cáo.</a>
           </div>
           <span style={{color: '#616770'}}>© 2019 Copyright: Rebook.com.vn</span>
+          <div style={{margin:'20px 0'}}>
+            <SocialIcon url="http://linkedin.com/in/jaketrent" style={{marginRight:'5px'}}/>
+            <SocialIcon network="twitter" bgColor="#ff5a01" style={{marginRight:'5px'}}/>
+            <SocialIcon network="facebook" style={{marginRight:'5px'}}/>
+            <SocialIcon network="google" style={{marginRight:'5px'}}/>
+          </div>
         </div>
     )
   }

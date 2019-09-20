@@ -16,6 +16,7 @@ import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import './_app.css';
 import {Card, CardImg} from "reactstrap";
 import Messages from "../Messages/Messages";
+import Aside from "../Aside/Aside";
 
 class App extends Component {
   constructor(props) {
@@ -81,12 +82,6 @@ class App extends Component {
   //   }
   // };
 
-  // callBackFromApp = (isSearch) => {
-  //   this.setState({
-  //     renderSearchBox: isSearch
-  //   },()=>console.log("renderSearchBox: "+this.state.renderSearchBox))
-  // };
-
   render() {
     if (this.state.loading) {
       return <LoadingIndicator/>
@@ -99,8 +94,6 @@ class App extends Component {
                 <div className="app-top-box sticky-top">
                   <AppHeader authenticated={this.state.authenticated}
                              currentUser={this.state.currentUser}
-                             // callBackFromApp={this.callBackFromApp}
-                             // renderInputHeader={this.state.renderInputHeader}
                              onLogout={this.handleLogout}/>
                 </div> : null
           }
@@ -159,10 +152,9 @@ class App extends Component {
             <Route path="/oauth2/redirect"
                    component={OAuth2RedirectHandler}>
             </Route>
-            {/*<Route component={NotFound}></Route>*/}
           </div>
-          <div className="app-footer">
-          </div>
+
+          <div className="app-footer"></div>
           <Alert stack={{limit: 3}}
                  timeout={3000}
                  position='top-right' effect='slide' offset={65}/>

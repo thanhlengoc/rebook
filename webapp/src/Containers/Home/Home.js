@@ -3,7 +3,15 @@ import {
   Card,
   CardHeader,
   CardBody,
-  Button, Modal, Input, Row, Collapse
+  Button,
+  Modal,
+  Input,
+  Row,
+  Collapse,
+  Progress,
+  TabPane,
+  ListGroupItem,
+  ListGroup, TabContent, NavLink, NavItem, Nav
 } from 'reactstrap';
 import './_home.css';
 import PageLeft from "../PageLeft/PageLeft";
@@ -31,6 +39,8 @@ import 'bootstrap-social/bootstrap-social.css';
 import { SocialIcon } from 'react-social-icons';
 import LaddaButton, {EXPAND_LEFT} from "react-ladda";
 import 'ladda/dist/ladda-themeless.min.css';
+import classNames from 'classnames';
+import Aside from "../Aside/Aside";
 
 class Home extends Component {
   constructor(props) {
@@ -555,7 +565,7 @@ class Home extends Component {
           <div className="container-fluid" style={{paddingLeft:"40px", marginTop:"15px"}}>
             <div className="row">
 
-              <div className="col col-md-2">
+              <div className="col col-md-2" style={{paddingRight:'10px'}}>
                 <PageLeft/>
               </div>
 
@@ -566,10 +576,9 @@ class Home extends Component {
                           <CardHeader className="news-post"
                                       onClick={this.toggleCollapse}>
                             <strong>
-                              <img src="/icon/create_new.png"/> Tạo bài viết
+                              <img src="/icon/icons8-browser_window.png"/> Tạo bài viết
                             </strong>
                           </CardHeader>
-                          <Collapse isOpen={this.state.collapsePost} id="collapseExample">
                             <CardBody style={{padding: '10px'}}>
                               <div style={{display: 'flex', alignItems: 'center'}}>
                                 <a className="btn-user-in-create">
@@ -581,6 +590,7 @@ class Home extends Component {
                                 </a>
                                 <Input className='border-none-outline' type='textarea'
                                        name="summary"
+                                       onClick={this.toggleCollapse}
                                        style={{height: '50px',textIdent:'32px', color:'#aaa', fontSize:'16px'}}
                                        onChange={this.handleChangeInput}
                                        placeholder={currentUser ? (currentUser.name
@@ -590,7 +600,7 @@ class Home extends Component {
                               </div>
 
                               <hr/>
-
+                              <Collapse isOpen={this.state.collapsePost} id="collapseExample">
                               <ImageUploader
                                   withIcon={false}
                                   buttonText='Ảnh/Video'
@@ -663,8 +673,8 @@ class Home extends Component {
                                   <i className="far fa-hand-point-up"></i> Chia sẻ
                                 </LaddaButton>
                               </div>
+                              </Collapse>
                             </CardBody>
-                          </Collapse>
                         </Card>
                     )
                     : null
@@ -683,18 +693,12 @@ class Home extends Component {
 
               </div>
 
-              <div className="col col-md-3">
+              <div className="col col-md-3" style={{paddingRight:'20px'}}>
                 <PageRight callBackFromPageRight={this.callBackFromPageRight}/>
               </div>
 
               <div className="col col-md-2">
-                <div className="sticky-top" style={{top:"300px",zIndex:'100',width:'50px',float:'right'}}>
-                  <SocialIcon url="http://linkedin.com/in/jaketrent" />
-                  <SocialIcon network="twitter" bgColor="#ff5a01" />
-                  <SocialIcon network="facebook"/>
-                  <SocialIcon network="google"/>
-
-                </div>
+                <Aside/>
               </div>
             </div>
 

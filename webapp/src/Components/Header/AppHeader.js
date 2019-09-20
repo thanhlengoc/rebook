@@ -12,22 +12,7 @@ class AppHeader extends Component {
     }
   }
 
-  // handleClickInput = () => {
-  //   this.setState({
-  //     isSearch: !this.state.isSearch
-  //   },()=>this.props.callBackFromApp(this.state.isSearch))
-  // };
-
   render() {
-    // let searchInHeader;
-    // if(this.props.renderInputHeader === true) {
-    //   searchInHeader =
-    //       <div className="search">
-    //         <span className="fa fa-search"></span>
-    //         <input placeholder="Tìm kiếm"
-    //         />
-    //       </div>
-    // } else searchInHeader=null;
     const {currentUser, isSearch} = this.state;
 
     return (
@@ -48,7 +33,7 @@ class AppHeader extends Component {
                 {/*  <div className="graf-circle"></div>*/}
                 {/*  <div className="graf-circle"></div>*/}
                 {/*</div>*/}
-                <img src="/logo/real-estate-logo.jpg" style={{
+                <img src="/assets/brand/sygnet.svg" style={{
                   width: '40px',
                   height: '40px',
                   marginRight: '20px'
