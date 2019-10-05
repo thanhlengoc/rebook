@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.projects</groupId>
-	<artifactId>real-estate</artifactId>
+	<artifactId>rebook</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>real-estate</name>
+	<name>rebook</name>
 	<description>Real Estate Project</description>
 
 	<properties>
